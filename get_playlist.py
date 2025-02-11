@@ -5,9 +5,6 @@ def api_call(playlist, access_token):
     url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
     response = requests.get(url, headers={'Authorization': f'Bearer {access_token}'})
     api_response = json.dumps(response.json(), indent=4)
-   
-    with open('response.json', 'w') as f:
-        f.write(api_response)
 
     
     return api_response
